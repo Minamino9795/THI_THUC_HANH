@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <script>
+        function sumOfListFibonacy(x) {
+            if (x <= 0) {
+                return 0;
+            } else if (x === 1) {
+                return 1;
+            } else {
+                let sum = 1;
+                let truoc = 0;
+                let hien_tai = 1;
+
+                for (let i = 2; i <= x; i++) {
+                    let Fib = truoc + hien_tai;
+                    sum += Fib;
+                    truoc = hien_tai;
+                    hien_tai = Fib;
+                }
+
+                return sum;
+            }
+        }
+        console.log(sumOfListFibonacy(10));
+
+    </script>
 </body>
+
 </html>
