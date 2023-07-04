@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Circle Example</title>
+    <style>
+        #canvas {
+            border: 1px solid black;
+            background-color: yellow;
+
+        }
+    </style>
 </head>
+
 <body>
-    
+    <canvas id="canvas" width="500" height="200"></canvas>
+
+    <script>
+        class Circle {
+            constructor(x, y, radius, color) {
+                this.x = x;
+                this.y = y;
+                this.radius = radius;
+                this.color = color;
+            }
+            render(canvas) {
+                const ctx = canvas.getContext('2d');
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+        const canvas = document.getElementById('canvas');
+        const circle = new Circle(225, 100, 50, '#FF0000');
+        circle.render(canvas);
+    </script>
 </body>
+
 </html>
