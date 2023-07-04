@@ -16,14 +16,14 @@
                 return 1;
             } else {
                 let sum = 1;
-                let truoc = 0;
-                let hien_tai = 1;
+                let fib1 = 0;
+                let fib2 = 1;
 
                 for (let i = 2; i <= x; i++) {
-                    let Fib = truoc + hien_tai;
+                    let Fib = fib1 + fib2;
                     sum += Fib;
-                    truoc = hien_tai;
-                    hien_tai = Fib;
+                    fib1 = fib2;
+                fib2 = Fib;
                 }
 
                 return sum;
